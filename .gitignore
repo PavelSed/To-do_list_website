@@ -1,0 +1,10 @@
+*.log
+*.pot
+*.pyc
+*~
+__pycache__
+local_settings.py
+myvenv
+db.sqlite3
+/static
+.DS_Store

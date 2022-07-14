@@ -2,13 +2,19 @@
 
 {% block content %}
 
-<h1>ToDo</h1>
+    {{ error }}
 
-<h2>{{ error }}</h2>
+    {{ todo.title }}
 
-{{ viewtodo.title }}
-{{ viewtodo.description }}
-{{ viewtodo.important }}
-{{ viewtodo.created }}
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+    </form>
+
+    <form method="POST" action="{% url 'complitetodo' todo.id %}">
+    {% csrf_token %}
+    <button type="submit">Complete</button>
+    </form>
 
 {% endblock %}
